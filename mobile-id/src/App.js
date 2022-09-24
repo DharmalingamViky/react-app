@@ -1,7 +1,8 @@
 import { React } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useRef, useEffect } from 'react';
 
-import './styles.css';
+import './styles.scss';
 
 //pages
 import Dashboard from './components/Dashboard/Dashboard';
@@ -19,9 +20,18 @@ function App() {
     return <Login setToken={setToken} />
   }
 
+  const changeTheme = () => {
+    // 👇️ use document.getElementById()
+    const el = document.getElementById('my-element');
+    console.log(el);
+    this.el.nativeElement.className = 'dark-theme'; //light-theme
+  };
+
+
   return (
-    <div className="wrapper">
+    <div id="rootElement" className="wrapper">
       <Navigation />
+      <button onClick={changeTheme}>Click</button>
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
