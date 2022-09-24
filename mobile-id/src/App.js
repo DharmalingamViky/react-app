@@ -30,7 +30,6 @@ function App() {
   return (
     <div id="rootElement" className="wrapper">
       <Navigation />
-      <button onClick={changeTheme}>Click</button>
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
