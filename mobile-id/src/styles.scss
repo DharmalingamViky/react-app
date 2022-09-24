@@ -1,20 +1,30 @@
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+$primary: teal !default;
+$secondary: darkblue !default;
+$success: green !default;
+$info: cyan !default;
+$warning: yellow !default;
+$danger: red !default;
+$light: gray !default;
+$dark: gray !default;
 
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 
-.App {
-  background-color: rgba(58, 87, 87, 0.679);
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("./primary-theme-fonts/Montserrat-Bold.ttf");
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("./primary-theme-fonts/Montserrat-Medium.ttf");
 }
 
-.container-left {
-  width: 30%;
-  height: 100vh;
+@font-face {
+  font-family: "Montserrat-Semibold";
+  src: url("./primary-theme-fonts/Montserrat-SemiBold.ttf");
 }
 
-.container-right {
-  width: 70%;
+html,
+body {
+  font-family: "Montserrat-Medium";
 }

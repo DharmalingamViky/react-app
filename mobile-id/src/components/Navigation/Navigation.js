@@ -7,7 +7,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
-
 // Todo Remove material ui with  react-bootstrap
 
 class Navigation extends React.Component {
@@ -23,8 +22,8 @@ class Navigation extends React.Component {
     }
     render() {
         return (
-            <Navbar>
-                <Container>
+            <Navbar bg="light" expand="lg">
+                <Container fluid>
                     <Navbar.Brand href="Home">Mobile ID</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
