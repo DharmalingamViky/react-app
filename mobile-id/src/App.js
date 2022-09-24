@@ -1,7 +1,7 @@
 import { React } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import './App.css';
+import './styles.css';
 
 //pages
 import Dashboard from './components/Dashboard/Dashboard';
@@ -11,6 +11,7 @@ import Home from './components/Home/Home';
 
 import useToken from './components/UserStorage/useToken';
 import Navigation from './components/Navigation/Navigation';
+import Devices from './components/Devices/Devices';
 
 function App() {
   const { token, setToken } = useToken();
@@ -27,14 +28,15 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/preferences" element={<Preferences />} />
           <Route path="/home" element={<Home />} />
+          <Route path='/devices' element={<Devices />}></Route>
 
           {/* <Route path="users" element={<Users />}>
           <Route path="me" element={<OwnUserProfile />} />
           <Route path=":id" element={<UserProfile />} />
         </Route> */}
         </Routes>
-      </BrowserRouter>
-    </div>
+      </BrowserRouter >
+    </div >
   );
 }
 

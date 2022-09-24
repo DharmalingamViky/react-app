@@ -1,10 +1,20 @@
 import React from 'react';
-import Login from '../Login/Login';
-import useToken from '../UserStorage/useToken';
 
-export default function Dashboard() {
-  return (
-    <h2>Dashboard</h2>
-  );
-
+class Dashboard extends React.Component {
+  constuctor() {
+  }
+  render() {
+    return (
+      <div class="container">
+        <div class="container-left">
+          This will have content in the left box.
+        </div>
+        <div class="container-right">
+          This will have content in the right box.
+        </div>
+      </div>
+    );
+  }
 }
+
+export default (Dashboard);

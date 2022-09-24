@@ -5,33 +5,51 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import React from "react";
 
-export default function Navigation() {
-    return (
-        <AppBar position="static">
-            <Toolbar>
-                {/*Inside the IconButton, we 
+// Todo Remove material ui with  react-bootstrap
+
+class Navigation extends React.Component {
+    constuctor() {
+        this.routeChange = this.routeChange.bind(this);
+    }
+
+    routeChange() {
+        let path = `newPath`;
+        this.props.history.push(path);
+    }
+    render() {
+        return (
+            <AppBar position="static">
+                <Toolbar>
+                    {/*Inside the IconButton, we 
              can render various icons*/}
-                <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="menu"
-                    sx={{ mr: 2 }}
-                >
-                    {/*This is a simple Menu 
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="menu"
+                        sx={{ mr: 2 }}
+                    >
+                        {/*This is a simple Menu 
                Icon wrapped in Icon */}
-                    <MenuIcon />
-                </IconButton>
-                {/* The Typography component applies 
+                        <MenuIcon />
+                    </IconButton>
+                    {/* The Typography component applies 
              default font weights and sizes */}
 
-                <Typography variant="h6"
-                    component="div" sx={{ flexGrow: 1 }}>
-                    Mobile ID
-                </Typography>
-                <Button color="inherit">Logout</Button>
-            </Toolbar>
-        </AppBar>
-    );
+                    <Typography variant="h6"
+                        component="div" sx={{ flexGrow: 1 }}>
+                        Mobile ID
+                    </Typography>
+                    <Button color="inherit">Home</Button>
+                    <Button color="inherit">Dashboard</Button>
+                    <Button color="inherit">Devices</Button>
+                    <Button color="inherit">Logout</Button>
+                </Toolbar>
+            </AppBar>
+        );
+    }
 }
+
+export default (Navigation);

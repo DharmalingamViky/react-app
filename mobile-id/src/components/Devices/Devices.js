@@ -1,15 +1,8 @@
 import React from 'react';
 
-class Home extends React.Component {
+class Devices extends React.Component {
     constuctor() {
-        this.routeChange = this.routeChange.bind(this);
     }
-
-    routeChange() {
-        let path = `newPath`;
-        this.props.history.push(path);
-    }
-
     render() {
         return (
             <div class="container">
@@ -22,7 +15,6 @@ class Home extends React.Component {
             </div>
         );
     }
-
 }
 
-export default (Home);
+export default (Devices);
