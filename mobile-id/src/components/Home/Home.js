@@ -2,12 +2,12 @@ import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import DeviceList from '../Devices/DeviceList';
 import Container from 'react-bootstrap/Container';
+import '../../styles.scss';
 
 class Home extends React.Component {
     constuctor() {
         this.routeChange = this.routeChange.bind(this);
     }
-
     routeChange() {
         let path = `newPath`;
         this.props.history.push(path);
@@ -15,7 +15,7 @@ class Home extends React.Component {
 
     render() {
         return (
-            <>
+            <div class="fill-window">
                 <Container fluid>
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-12">
@@ -42,7 +42,7 @@ class Home extends React.Component {
                     </div>
                 </Container>
 
-            </>
+            </div>
         );
     }
 

@@ -28,7 +28,7 @@ function App() {
 
 
   return (
-    <div id="rootElement" className="wrapper">
+    <div id="rootElement" className="fill-window">
       <Navigation />
       <BrowserRouter>
         <Routes>

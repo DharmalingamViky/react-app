@@ -1,7 +1,10 @@
 import React from 'react';
 import { Bar, Line, Pie, Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, registerables } from 'chart.js';
+import Accordion from 'react-bootstrap/Accordion';
 import { Chart } from 'react-chartjs-2'
+import Container from 'react-bootstrap/Container';
+import '../../styles.scss';
 ChartJS.register(...registerables);
 
 const state = {
@@ -65,69 +68,105 @@ class Dashboard extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Bar
-          data={state}
-          options={{
-            title: {
-              display: true,
-              text: 'Average Rainfall per month',
-              fontSize: 20
-            },
-            legend: {
-              display: true,
-              position: 'right'
-            }
-          }}
-        />
-        <div>
-          <Line
-            data={lineState}
-            options={{
-              title: {
-                display: true,
-                text: 'Average Rainfall per month',
-                fontSize: 20
-              },
-              legend: {
-                display: true,
-                position: 'right'
-              }
-            }}
-          />
-        </div>
+      <div class="fill-window">
+        <Container fluid>
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-12">
+              <Accordion defaultActiveKey="0">
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header>Device list</Accordion.Header>
+                  <Accordion.Body>
+                    <h1>pagination</h1>
+                    <h1>device list will go here with endless scrolling</h1>
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="1">
+                  <Accordion.Header>reserved</Accordion.Header>
+                  <Accordion.Body>
+                    <h1>pagination</h1>
+                    <h1>device list will go here with endless scrolling</h1>
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </div>
 
-        <div>
-          <Pie
-            data={state}
-            options={{
-              title: {
-                display: true,
-                text: 'Average Rainfall per month',
-                fontSize: 20
-              },
-              legend: {
-                display: true,
-                position: 'right'
-              }
-            }}
-          />
+            <div class="col-lg-8 col-md-8 col-12">
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-12">
+                  <Bar
+                    data={state}
+                    options={{
+                      title: {
+                        display: true,
+                        text: 'Average Rainfall per month',
+                        fontSize: 20
+                      },
+                      legend: {
+                        display: true,
+                        position: 'right'
+                      }
+                    }}
+                  />
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                  <Line
+                    data={lineState}
+                    options={{
+                      title: {
+                        display: true,
+                        text: 'Average Rainfall per month',
+                        fontSize: 20
+                      },
+                      legend: {
+                        display: true,
+                        position: 'right'
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-12">
+                  <Pie
+                    data={state}
+                    options={{
+                      title: {
+                        display: true,
+                        text: 'Average Rainfall per month',
+                        fontSize: 20
+                      },
+                      legend: {
+                        display: true,
+                        position: 'right'
+                      }
+                    }}
+                  />
+                </div>
 
-          <Doughnut
-            data={state}
-            options={{
-              title: {
-                display: true,
-                text: 'Average Rainfall per month',
-                fontSize: 20
-              },
-              legend: {
-                display: true,
-                position: 'right'
-              }
-            }}
-          />
-        </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                  <Doughnut
+                    data={state}
+                    options={{
+                      title: {
+                        display: true,
+                        text: 'Average Rainfall per month',
+                        fontSize: 20
+                      },
+                      legend: {
+                        display: true,
+                        position: 'right'
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </Container>
       </div>
 
     );

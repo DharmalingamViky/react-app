@@ -27,4 +27,32 @@ $dark: gray !default;
 html,
 body {
   font-family: "Montserrat-Medium";
+  height: 100%;
+  color: white;
 }
+
+.fill-window {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgb(152, 152, 152) //background: rgba(255, 255, 255, 0.5);
+}
+
+.bg-light {
+  background-color: rgb(144, 238, 144) !important;
+}
+
+.accordion-item,
+.accordion-collapse .collapse,
+.accordion-header,
+.accordion {
+  background-color: rgb(152, 152, 152) !important;
+
+}
+
+// .accordion-button:not(.collapsed) {
+//   color: rgb(152, 152, 152) !important;
+//   background-color: rgb(152, 152, 152) !important;
+// }
